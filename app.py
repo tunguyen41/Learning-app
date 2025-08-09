@@ -196,8 +196,8 @@ def review_day(day = ""):
         if fexam_entry.get() == user_fexam:
             feedback_label.config(text="Correct!", fg="green")
             wrong_times = 0
-            query = f'delete from %s where "Meaning" = %s'
-            parameters = (day, selected_word_data.get("Meaning"),)
+            query = f'delete from "{day}" where "Meaning" = %s'
+            parameters = (selected_word_data.get("meaning"),)
             run_query(query, parameters)
         else:
             check_to_reset()
